@@ -10,7 +10,7 @@ void *mx_memmem(const void *big, size_t big_len,
     if (big_len < little_len)
         return NULL;
     for (size_t i = 0; i <= big_len - little_len; ++i)
-        if (mx_strncmp(s1 + i, s2, little_len) == 0)
+        if (mx_memcmp(s1 + i, s2, little_len) == 0)
             return (void *)(s1 + i);
     return NULL;
 }
