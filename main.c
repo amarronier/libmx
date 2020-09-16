@@ -212,15 +212,19 @@ int main() {
 
     //mx_del_strarr
     printf("\n>> started checking mx_del_strarr...\n");
-    /*char **del_strarr = malloc(4 * sizeof(char *));
+    char **del_strarr = malloc(4 * sizeof(char *));
     del_strarr[0] = mx_strdup("Michelangelo");
     del_strarr[1] = mx_strdup("Donatello");
     del_strarr[2] = mx_strdup("Leonardo");
-    del_strarr[3] = mx_strdup("Raphael");
-    printf("actual result:   ");
+    del_strarr[3] = NULL;
+    char *del_strarr_copy[4];
+    for (int i = 0; i < 4; ++i) del_strarr_copy[i] = del_strarr[i];
+    for (int i = 0; i < 4; ++i) printf("%p !%s!\n", (void *)del_strarr_copy[i], del_strarr_copy[i]);
+    printf("actual result:   \n");
     mx_del_strarr(&del_strarr);
-    printf("%s", (char *)del_strarr);
-    printf("\nexpected result: (null)\n");*/
+    printf("%s\n", (char *)del_strarr);
+    for (int i = 0; i < 4; ++i) printf("%p !%s!\n", (void *)del_strarr_copy[i], del_strarr_copy[i]);
+    printf("expected result: (null)\n");
 
     //mx_get_char_index
     printf("\n>> started checking mx_get_char_index...\n");
